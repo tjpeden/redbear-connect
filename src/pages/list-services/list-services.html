@@ -1,12 +1,24 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ListServices</ion-title>
+    <ion-title>Services</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+  <h1>{{ device.id }}</h1>
 
+  <ion-list>
+    <ion-item *ngFor="let characteristic of device.characteristics">
+      <h2>{{ characteristic.service }}</h2>
+      <h3>{{ characteristic.characteristic }}</h3>
+      <ion-item-options side="right">
+        <button color="primary" ion-button *ngFor="let property of characteristic.properties">
+          <ion-icon name="eye" *ngIf="property === 'Read'"></ion-icon>
+          <ion-icon name="create" *ngIf="property === 'Write'"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item>
+  </ion-list>
 </ion-content>

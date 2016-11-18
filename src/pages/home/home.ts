@@ -8,6 +8,8 @@ import {
 
 import { BLE } from 'ionic-native';
 
+import { ListServicesPage } from '../list-services/list-services';
+
 import { Device } from '../../models/device';
 
 @Component({

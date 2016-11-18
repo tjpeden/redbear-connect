@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Devices</ion-list-header>
+    <ion-item *ngFor="let device of devices" (click)="connect($event, device)">
+      <ion-icon name="bluetooth" item-left></ion-icon>
+      <h2>{{ device.name }}</h2>
+      <p>{{ device.id }}</p>
+      <ion-note item-right>{{ device.rssi }}</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
